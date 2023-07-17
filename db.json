@@ -12,7 +12,7 @@
         "owner": "Tim",
         "name": "Car",
         "image": "./images/zz-plant.jpg",
-        "about": "Hot wheel car with one missing "
+        "about": "Hot wheel car with one missing wheel"
         },
         {
         "id": 3,
@@ -25,10 +25,10 @@
     "events": [
         {
         "id": 1,
-        "name": "Aloe",
+        "name": "South Houston Toy Swap",
         "image": "./images/aloe.jpg",
-        "about": 15.99,
-        "location": "Houston"
+        "about": "August 1st, 10:00am",
+        "location": "South Houston"
         }
     ]
 }
