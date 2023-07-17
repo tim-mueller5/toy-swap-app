@@ -6,7 +6,7 @@ function AllItemsList({ allToys }) {
 
     return (
         <div>
-            <h3>All items up for the taking will render header</h3>
+            <h3>All items up for the taking will render here</h3>
             {toysToDisplay}
         </div>
     )
