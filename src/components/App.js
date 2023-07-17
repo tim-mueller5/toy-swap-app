@@ -23,12 +23,13 @@ function App() {
     .then(data => setAllEvents(data))
   }, [])
 
+
   return (
     <div className="App">
       <Header/>
       <Switch>
         <Route exact path="/">
-          <UsersItemList allToys={allToys} />
+          <UsersItemList allToys={allToys} setAllToys={setAllToys} />
         </Route>
         <Route path="/all-listings">
           <AllItemsList allToys={allToys} />
@@ -37,7 +38,7 @@ function App() {
           <AllEvents allEvents={allEvents} />
         </Route>
         <Route path="*">
-          <h1>404 not found</h1>
+          <h1>You're on the wrong side of town, nothing to see here.</h1>
         </Route>
       </Switch>
     </div>

@@ -1,34 +1,34 @@
 {
-    "toys": [
-        {
-        "id": 1,
-        "owner": "Tim",
-        "name": "Train",
-        "image": "./images/aloe.jpg",
-        "about": "Great condition!"
-        },
-        {
-        "id": 2,
-        "owner": "Tim",
-        "name": "Car",
-        "image": "./images/zz-plant.jpg",
-        "about": "Hot wheel car with one missing wheel"
-        },
-        {
-        "id": 3,
-        "owner": "Peter",
-        "name": "Ball",
-        "image": "./images/aloe.jpg",
-        "about": "Currently flat"
-        }
-    ],
-    "events": [
-        {
-        "id": 1,
-        "name": "South Houston Toy Swap",
-        "image": "./images/aloe.jpg",
-        "about": "August 1st, 10:00am",
-        "location": "South Houston"
-        }
-    ]
+  "toys": [
+    {
+      "id": 1,
+      "owner": "Tim",
+      "name": "Train",
+      "image": "./images/aloe.jpg",
+      "about": "Great condition!"
+    },
+    {
+      "id": 2,
+      "owner": "Tim",
+      "name": "Car",
+      "image": "./images/zz-plant.jpg",
+      "about": "Hot wheel car with one missing wheel"
+    },
+    {
+      "id": 3,
+      "owner": "Peter",
+      "name": "Ball",
+      "image": "./images/aloe.jpg",
+      "about": "Currently flat"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "name": "South Houston Toy Swap",
+      "image": "./images/aloe.jpg",
+      "about": "August 1st, 10:00am",
+      "location": "South Houston"
+    }
+  ]
 }
