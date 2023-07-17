@@ -8,18 +8,18 @@
       "about": "Great condition!"
     },
     {
-      "id": 2,
-      "owner": "Tim",
-      "name": "Car",
-      "image": "./images/zz-plant.jpg",
-      "about": "Hot wheel car with one missing wheel"
-    },
-    {
       "id": 3,
       "owner": "Peter",
       "name": "Ball",
       "image": "./images/aloe.jpg",
       "about": "Currently flat"
+    },
+    {
+      "owner": "Tim",
+      "name": "Car",
+      "image": "Car",
+      "about": "Hot wheel car with one missing wheel",
+      "id": 4
     }
   ],
   "events": [

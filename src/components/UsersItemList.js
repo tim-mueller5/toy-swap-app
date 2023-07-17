@@ -2,7 +2,7 @@ import { useState } from "react"
 import ToyCard from "./ToyCard"
 
 function UsersItemList({ allToys, setAllToys }) {
-
+    
     const [currentUser, setCurrentUser] = useState("Tim")
     const [formData, setFormData] = useState({
         owner: currentUser,
@@ -10,16 +10,26 @@ function UsersItemList({ allToys, setAllToys }) {
         image: "",
         about: ""
     })
+    
+    const handleDeleteClick = (toy) => {
+        fetch(`http://localhost:3000/toys/${toy.id}`, {
+            method: "DELETE",
+        })
+        .then(resp => resp.json())
+        .then(() => {
+            const updatedToys = allToys.filter((eachtoy) => eachtoy.id !== toy.id)
+            setAllToys(updatedToys)
+        })
+    }
 
     const currentUsersToysToDisplay = allToys.map((toy) => {
         if(toy.owner === currentUser){
-            return <ToyCard toy={toy} key={toy.id}/>
+            return <ToyCard toy={toy} key={toy.id} onUserPage="true" handleDeleteClick={handleDeleteClick}/>
         }
     })
 
     const handleNewToySubmit = (e) => {
         e.preventDefault();
-        console.log(formData)
         fetch("http://localhost:3000/toys",{
             method: "POST",
             headers: {
@@ -34,6 +44,7 @@ function UsersItemList({ allToys, setAllToys }) {
     const handleChange = (e) => {
         setFormData({...formData, [e.target.id]: e.target.value})
     }
+
 
     return (
         <div>
