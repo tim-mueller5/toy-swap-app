@@ -11,7 +11,7 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
         about: ""
     })
     
-    const handleDeleteClick = (toy) => {
+    const handleToyDeleteClick = (toy) => {
         fetch(`http://localhost:3000/toys/${toy.id}`, {
             method: "DELETE",
         })
@@ -24,7 +24,7 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
 
     const currentUsersToysToDisplay = allToys.map((toy) => {
         if(toy.owner === currentUser.name){
-            return <ToyCard toy={toy} key={toy.id} onUserPage="true" handleDeleteClick={handleDeleteClick}/>
+            return <ToyCard toy={toy} key={toy.id} onUserPage="true" handleToyDeleteClick={handleToyDeleteClick}/>
         } else {
             return null
         }

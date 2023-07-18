@@ -4,8 +4,7 @@ import AllItemsList from './AllItemsList';
 import './App.css';
 import Header from './Header';
 import UsersItemList from './UsersItemList';
-import { Switch, Route } from "react-router-dom";
-import ChangeCurrentUser from './ChangeCurrentUser';
+import { Switch, Route, Link } from "react-router-dom";
 
 function App() {
 
@@ -40,13 +39,16 @@ function App() {
           <UsersItemList currentUser={currentUser} setCurrentUser={setCurrentUser} allToys={allToys} setAllToys={setAllToys} allUsers={allUsers} setAllUsers={setAllUsers}/>
         </Route>
         <Route exact path="/">
-          <AllItemsList allToys={allToys} currentUser={currentUser} />
+          <AllItemsList allToys={allToys} />
         </Route>
         <Route path="/events">
-          <AllEvents allEvents={allEvents} currentUser={currentUser} />
+          <AllEvents allEvents={allEvents} setAllEvents={setAllEvents} />
         </Route>
         <Route path="*">
-          <h1>You're on the wrong side of town, nothing to see here.</h1>
+          <div>
+            <h1>You're on the wrong side of town, nothing to see here.</h1>
+            <Link to="/">Back Home</Link>
+          </div>
         </Route>
       </Switch>
     </div>

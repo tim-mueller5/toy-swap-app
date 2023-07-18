@@ -1,8 +1,19 @@
 import EventCard from "./EventCard"
 
-function AllEvents({ allEvents }) {
+function AllEvents({ allEvents, setAllEvents }) {
 
-    const eventsToDisplay = allEvents.map((event) => (<EventCard event={event} key={event.id}/>))
+    const handleEventDeleteClick = (event) => {
+        fetch(`http://localhost:3000/events/${event.id}`, {
+            method: "DELETE",
+        })
+        .then(resp => resp.json())
+        .then(() => {            
+            const updatedEvents = allEvents.filter((eachevent) => eachevent.id !== event.id)
+            setAllEvents(updatedEvents)
+        })
+    }
+
+    const eventsToDisplay = allEvents.map((event) => (<EventCard event={event} key={event.id} handleEventDeleteClick={handleEventDeleteClick} />))
 
     return (
     <div>

@@ -1,11 +1,11 @@
 
-function ToyCard({ toy, onUserPage, handleDeleteClick }) {
+function ToyCard({ toy, onUserPage, handleToyDeleteClick }) {
     return (
         <div style={{border: "solid"}}>
             <p>{toy.name}</p>
             <img src={toy.image} alt={toy.name}/>
             <p>{toy.about}</p>
-            {onUserPage ? <button onClick={() => handleDeleteClick(toy)}>Delete</button> : null}
+            {onUserPage ? <button onClick={() => handleToyDeleteClick(toy)}>Delete</button> : null}
         </div>
     )
 }

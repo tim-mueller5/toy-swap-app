@@ -1,10 +1,11 @@
 
-function EventCard({ event }) {
+function EventCard({ event, handleEventDeleteClick }) {
     return (
-        <div>
+        <div style={{border: "solid"}}>
             <p>Event Name: {event.name}</p>
             <p>Location: {event.location}</p>
             <p>Date: {event.about}</p>
+            <button onClick={() => handleEventDeleteClick(event)}>Delete</button>
         </div>
     )
 }

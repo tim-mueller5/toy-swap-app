@@ -29,6 +29,13 @@
       "image": "./images/aloe.jpg",
       "about": "August 1st, 10:00am",
       "location": "South Houston"
+    },
+    {
+      "id": 2,
+      "name": "Other Toy Swap",
+      "image": "./images/aloe.jpg",
+      "about": "August 26st, 9:00am",
+      "location": "Austin"
     }
   ],
   "users": [
