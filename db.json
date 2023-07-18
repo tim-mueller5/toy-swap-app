@@ -30,5 +30,19 @@
       "about": "August 1st, 10:00am",
       "location": "South Houston"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Tim",
+      "password": "123",
+      "isSignedIn": false
+    },
+    {
+      "name": "Peter",
+      "password": "123",
+      "isSignedIn": false,
+      "id": 2
+    }
   ]
 }

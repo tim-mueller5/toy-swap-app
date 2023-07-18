@@ -5,37 +5,48 @@ import './App.css';
 import Header from './Header';
 import UsersItemList from './UsersItemList';
 import { Switch, Route } from "react-router-dom";
+import ChangeCurrentUser from './ChangeCurrentUser';
 
 function App() {
 
   const [allToys, setAllToys] = useState([])
   const [allEvents, setAllEvents] = useState([])
+  const [allUsers, setAllUsers] = useState([])
+  const [currentUser, setCurrentUser] = useState({
+    name: "",
+    password: "",
+    isSignedIn: false
+  })
 
   useEffect(() => {
     fetch("http://localhost:3000/toys")
     .then(resp => resp.json())
     .then(data => setAllToys(data))
-  }, [])
 
-  useEffect(() => {
     fetch("http://localhost:3000/events")
     .then(resp => resp.json())
     .then(data => setAllEvents(data))
-  }, [])
 
+    fetch("http://localhost:3000/users")
+    .then(resp => resp.json())
+    .then(data => setAllUsers(data))
+  }, [])
 
   return (
     <div className="App">
       <Header/>
       <Switch>
         <Route exact path="/">
-          <UsersItemList allToys={allToys} setAllToys={setAllToys} />
+          <UsersItemList currentUser={currentUser} allToys={allToys} setAllToys={setAllToys} />
         </Route>
         <Route path="/all-listings">
           <AllItemsList allToys={allToys} />
         </Route>
         <Route path="/events">
           <AllEvents allEvents={allEvents} />
+        </Route>
+        <Route path="/login">
+          <ChangeCurrentUser currentUser={currentUser} setCurrentUser={setCurrentUser} allUsers={allUsers} setAllUsers={setAllUsers}/>
         </Route>
         <Route path="*">
           <h1>You're on the wrong side of town, nothing to see here.</h1>
