@@ -60,10 +60,9 @@ function ChangeCurrentUser({ currentUser, setCurrentUser, allUsers, setAllUsers 
 
     return (
         <div>
-            <h3>Current User: {currentUser.name === "" ? "Not Signed in" : currentUser.name}</h3>
             <div>
                 <form onSubmit={onLoginSubmit}>
-                    <h3>Login: </h3>
+                    {currentUser.name === "" ? <h3>Login: </h3> : <h3>Change User: </h3>}
                     <label>Name: </label>
                     <input type="text" id="name" value={loginFormData.name} onChange={handleLoginChange}/>
                     <label> Password: </label>

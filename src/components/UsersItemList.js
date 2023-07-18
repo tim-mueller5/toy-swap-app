@@ -1,7 +1,8 @@
 import { useState } from "react"
 import ToyCard from "./ToyCard"
+import ChangeCurrentUser from "./ChangeCurrentUser"
 
-function UsersItemList({ currentUser, allToys, setAllToys }) {
+function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUsers, setAllUsers }) {
     
     const [formData, setFormData] = useState({
         owner: currentUser.name,
@@ -48,7 +49,7 @@ function UsersItemList({ currentUser, allToys, setAllToys }) {
 
     return (
         <div>
-            <h3>Current User: {currentUser.name}</h3>
+            <h3>Current User: {currentUser.name === "" ? "Not Signed in" : currentUser.name}</h3>
             {currentUser.name === "" 
             ? <h3>Login to see your listings</h3> 
             :   <div>
@@ -66,6 +67,7 @@ function UsersItemList({ currentUser, allToys, setAllToys }) {
                     {currentUsersToysToDisplay}
                 </div>
             }
+            <ChangeCurrentUser currentUser={currentUser} setCurrentUser={setCurrentUser} allUsers={allUsers} setAllUsers={setAllUsers}/>
         </div>
     )
 }
