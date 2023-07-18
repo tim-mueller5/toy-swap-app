@@ -34,16 +34,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header currentUser={currentUser} />
       <Switch>
         <Route path="/user">
           <UsersItemList currentUser={currentUser} setCurrentUser={setCurrentUser} allToys={allToys} setAllToys={setAllToys} allUsers={allUsers} setAllUsers={setAllUsers}/>
         </Route>
         <Route exact path="/">
-          <AllItemsList allToys={allToys} />
+          <AllItemsList allToys={allToys} currentUser={currentUser} />
         </Route>
         <Route path="/events">
-          <AllEvents allEvents={allEvents} />
+          <AllEvents allEvents={allEvents} currentUser={currentUser} />
         </Route>
         <Route path="*">
           <h1>You're on the wrong side of town, nothing to see here.</h1>

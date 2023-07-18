@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function Header() {
+function Header({ currentUser }) {
     return (
       <div>
         <header>
@@ -9,6 +9,7 @@ function Header() {
           <Link to="/events">  |  To All Events  |  </Link>
           <Link to="/user">  User Page</Link>
         </header>
+        <h3>Current User: {currentUser.name === "" ? "Not Signed in" : currentUser.name}</h3>
       </div>
     );
   }

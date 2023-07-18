@@ -49,7 +49,6 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
 
     return (
         <div>
-            <h3>Current User: {currentUser.name === "" ? "Not Signed in" : currentUser.name}</h3>
             {currentUser.name === "" 
             ? <h3>Login to see your listings</h3> 
             :   <div>
