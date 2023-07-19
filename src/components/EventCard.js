@@ -3,7 +3,6 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
 
     const handleEventLike = () => {
         if(event.likedBy.length === 0 || !event.likedBy.includes(currentUser.name)){
-            console.log("fetch run")
             fetch(`http://localhost:3000/events/${event.id}`,{
                 method: "PATCH",
                 headers: {
@@ -31,8 +30,38 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
                 })
                 setAllEvents(updatedEvents)
             })
+        } else if (event.likedBy.includes(currentUser.name)){
+            const filteredLikedBy = event.likedBy.splice((event.likedBy.includes(currentUser.name)))
+            fetch(`http://localhost:3000/events/${event.id}`,{
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({likedBy: filteredLikedBy}),
+            })
+            .then(resp => resp.json())
+            .then(() => {
+                const newEvents = allEvents.map((eachEvent) => {
+                    if(eachEvent.id === event.id){
+                        return (
+                            {
+                                id: event.id,
+                                name: event.name,
+                                owner: event.owner,
+                                about: event.about,
+                                location: event.location,
+                                likedBy: filteredLikedBy
+                            }
+                        )
+                    } else{
+                        return eachEvent
+                    }
+                })
+                setAllEvents(newEvents)
+            })
         }
     }
+
 
     return (
         <div style={{border: "solid"}}>
@@ -40,7 +69,8 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
             <p>Location: {event.location}</p>
             <p>Date: {event.about}</p>
             <p>Owner: {currentUser.name === event.owner ? "You" : event.owner}</p>
-            {currentUser.name !== "" ? <button onClick={handleEventLike}>Like / Plan on attending</button> : null}
+            <p>People plan on attending: {event.likedBy}</p>
+            {currentUser.name !== "" ? <button onClick={handleEventLike}>{event.likedBy.includes(currentUser.name) ? "Unlike / Not planning on attending" : "Like / Plan on attending" }</button> : null}
             {currentUser.name === event.owner ? <button onClick={() => handleEventDeleteClick(event)}>Delete</button>: null}
         </div>
     )

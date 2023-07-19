@@ -30,6 +30,35 @@ function ToyCard({ toy, onUserPage, handleToyDeleteClick, currentUser, allToys, 
                 })
                 setAllToys(newToys)
             })
+        } else if (toy.likedBy.includes(currentUser.name)){
+            const filteredLikedBy = toy.likedBy.splice((toy.likedBy.includes(currentUser.name)))
+            fetch(`http://localhost:3000/toys/${toy.id}`,{
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({likedBy: filteredLikedBy}),
+            })
+            .then(resp => resp.json())
+            .then(() => {
+                const newToys = allToys.map((eachToy) => {
+                    if(eachToy.id === toy.id){
+                        return (
+                            {
+                                id: toy.id,
+                                owner: toy.owner,
+                                name: toy.name,
+                                image: toy.image,
+                                about: toy.about,
+                                likedBy: filteredLikedBy
+                            }
+                        )
+                    } else{
+                        return eachToy
+                    }
+                })
+                setAllToys(newToys)
+            })
         }
     }
 
@@ -40,7 +69,7 @@ function ToyCard({ toy, onUserPage, handleToyDeleteClick, currentUser, allToys, 
             <p>About: {toy.about}</p>
             <div>{toy.likedBy}</div>
             <p>Likes: {toy.likedBy.length}</p>
-            {currentUser.name !== "" && !onUserPage ? <button onClick={handleLike}>Like</button> : null}
+            {currentUser.name !== "" && !onUserPage ? <button onClick={handleLike}>{toy.likedBy.includes(currentUser.name) ? "Unlike" : "Like" }</button> : null}
             {onUserPage ? <button onClick={() => handleToyDeleteClick(toy)}>Delete</button> : null}
         </div>
     )
