@@ -42,7 +42,7 @@ function App() {
           <AllItemsList allToys={allToys} setAllToys={setAllToys} currentUser={currentUser} />
         </Route>
         <Route path="/events">
-          <AllEvents allEvents={allEvents} setAllEvents={setAllEvents} />
+          <AllEvents allEvents={allEvents} setAllEvents={setAllEvents} currentUser={currentUser} />
         </Route>
         <Route path="*">
           <div>

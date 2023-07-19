@@ -1,6 +1,6 @@
 import EventCard from "./EventCard"
 
-function AllEvents({ allEvents, setAllEvents }) {
+function AllEvents({ allEvents, setAllEvents, currentUser }) {
 
     const handleEventDeleteClick = (event) => {
         fetch(`http://localhost:3000/events/${event.id}`, {
@@ -13,7 +13,7 @@ function AllEvents({ allEvents, setAllEvents }) {
         })
     }
 
-    const eventsToDisplay = allEvents.map((event) => (<EventCard event={event} key={event.id} handleEventDeleteClick={handleEventDeleteClick} />))
+    const eventsToDisplay = allEvents.map((event) => (<EventCard event={event} key={event.id} handleEventDeleteClick={handleEventDeleteClick} currentUser={currentUser}/>))
 
     return (
     <div>
@@ -22,5 +22,5 @@ function AllEvents({ allEvents, setAllEvents }) {
     </div>
     )
 }
-
+ 
 export default AllEvents

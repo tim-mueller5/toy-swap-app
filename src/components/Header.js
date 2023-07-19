@@ -9,7 +9,7 @@ function Header({ currentUser }) {
           <Link to="/events">  |  To All Events  |  </Link>
           <Link to="/user">  User Page</Link>
         </header>
-        <h3>Current User: {currentUser.name === "" ? "Not Signed in" : currentUser.name}</h3>
+        <h2>Current User: {currentUser.name === "" ? "Not Signed in" : currentUser.name}</h2>
       </div>
     );
   }
