@@ -36,10 +36,10 @@ function App() {
       <Header currentUser={currentUser} />
       <Switch>
         <Route path="/user">
-          <UsersItemList currentUser={currentUser} setCurrentUser={setCurrentUser} allToys={allToys} setAllToys={setAllToys} allUsers={allUsers} setAllUsers={setAllUsers}/>
+          <UsersItemList currentUser={currentUser} setCurrentUser={setCurrentUser} allToys={allToys} setAllToys={setAllToys} allUsers={allUsers} setAllUsers={setAllUsers} />
         </Route>
         <Route exact path="/">
-          <AllItemsList allToys={allToys} />
+          <AllItemsList allToys={allToys} setAllToys={setAllToys} currentUser={currentUser} />
         </Route>
         <Route path="/events">
           <AllEvents allEvents={allEvents} setAllEvents={setAllEvents} />

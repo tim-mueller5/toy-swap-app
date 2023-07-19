@@ -3,23 +3,26 @@
     {
       "id": 1,
       "owner": "Tim",
-      "name": "Train",
-      "image": "./images/aloe.jpg",
-      "about": "Great condition!"
+      "name": "Farm",
+      "image": "./Farm.jpg",
+      "about": "Great condition!",
+      "likedBy": []
     },
     {
-      "id": 3,
+      "id": 2,
       "owner": "Peter",
-      "name": "Ball",
-      "image": "./images/aloe.jpg",
-      "about": "Currently flat"
+      "name": "Infant piano",
+      "image": "./Infant piano.jpg",
+      "about": "Makes discordant music",
+      "likedBy": []
     },
     {
       "owner": "Tim",
-      "name": "Car",
-      "image": "Car",
-      "about": "Hot wheel car with one missing wheel",
-      "id": 4
+      "name": "Stacking Rings",
+      "image": "./Stacking rings.jpg",
+      "about": "All rings included",
+      "likedBy": [],
+      "id": 3
     }
   ],
   "events": [

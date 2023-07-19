@@ -24,7 +24,7 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
 
     const currentUsersToysToDisplay = allToys.map((toy) => {
         if(toy.owner === currentUser.name){
-            return <ToyCard toy={toy} key={toy.id} onUserPage="true" handleToyDeleteClick={handleToyDeleteClick}/>
+            return <ToyCard toy={toy} key={toy.id} onUserPage="true" handleToyDeleteClick={handleToyDeleteClick} currentUser={currentUser}/>
         } else {
             return null
         }
@@ -62,7 +62,7 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
                         <input type="text" id="about" value={formData.about} onChange={handleChange}/>
                         <button type="submit">Submit</button>
                     </form>
-                    <h5>Your Toys currently Listed:</h5>
+                    <h2>Your Toys currently Listed:</h2>
                     {currentUsersToysToDisplay}
                 </div>
             }

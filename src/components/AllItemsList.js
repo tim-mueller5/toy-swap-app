@@ -1,8 +1,9 @@
 import ToyCard from "./ToyCard"
 
-function AllItemsList({ allToys }) {
+function AllItemsList({ allToys, currentUser, setAllToys }) {
+    
 
-    const toysToDisplay = allToys.map((toy) => (<ToyCard toy={toy} key={toy.id} />))
+    const toysToDisplay = allToys.map((toy) => (<ToyCard toy={toy} key={toy.id} currentUser={currentUser} allToys={allToys} setAllToys={setAllToys} />))
 
     return (
         <div>
