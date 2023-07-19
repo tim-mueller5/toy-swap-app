@@ -31,14 +31,16 @@
       "name": "South Houston Toy Swap",
       "owner": "Tim",
       "about": "August 1st, 10:00am",
-      "location": "South Houston"
+      "location": "South Houston",
+      "likedBy": []
     },
     {
       "id": 2,
       "name": "Other Toy Swap",
       "owner": "Peter",
       "about": "August 26st, 9:00am",
-      "location": "Austin"
+      "location": "Austin",
+      "likedBy": []
     }
   ],
   "users": [

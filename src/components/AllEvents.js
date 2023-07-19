@@ -13,7 +13,7 @@ function AllEvents({ allEvents, setAllEvents, currentUser }) {
         })
     }
 
-    const eventsToDisplay = allEvents.map((event) => (<EventCard event={event} key={event.id} handleEventDeleteClick={handleEventDeleteClick} currentUser={currentUser}/>))
+    const eventsToDisplay = allEvents.map((event) => (<EventCard event={event} key={event.id} handleEventDeleteClick={handleEventDeleteClick} currentUser={currentUser} allEvents={allEvents} setAllEvents={setAllEvents}/>))
 
     return (
     <div>
