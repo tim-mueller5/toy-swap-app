@@ -31,9 +31,14 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
         }
     })
 
+    // const beforeSubmit = (e) => {
+    //     e.preventDefault();
+    //     setFormData({...formData, owner: currentUser.name})
+    //     handleNewToySubmit()
+    // }
+    
     const handleNewToySubmit = (e) => {
         e.preventDefault();
-        setFormData({...formData, owner: currentUser.name})
         if(formData.name === "" || formData.image === "" || formData.about === ""){
             alert("Please fill out all sections")
         } else{
@@ -42,12 +47,18 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({...formData, owner: currentUser.name}),
             })
             .then(resp => resp.json())
             .then(newItem => {
-                console.log(newItem)
                 setAllToys([...allToys, newItem])
+                setFormData({
+                    owner: currentUser.name,
+                    name: "",
+                    image: "",
+                    about: "",
+                    likedBy: []
+                })
             })
         }
     }

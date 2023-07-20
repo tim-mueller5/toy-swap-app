@@ -25,7 +25,6 @@ function ChangeCurrentUser({ currentUser, setCurrentUser, allUsers, setAllUsers 
         e.preventDefault();
         const loginAttempt = allUsers.filter((user) => {
             if(user.name === loginFormData.name && user.password === loginFormData.password){
-                console.log(user)
                 setCurrentUser(user)
                 setLoginFormData({name: "", password: ""})
                 return (user.name)
