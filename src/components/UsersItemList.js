@@ -30,12 +30,6 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
             return null
         }
     })
-
-    // const beforeSubmit = (e) => {
-    //     e.preventDefault();
-    //     setFormData({...formData, owner: currentUser.name})
-    //     handleNewToySubmit()
-    // }
     
     const handleNewToySubmit = (e) => {
         e.preventDefault();

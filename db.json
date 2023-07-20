@@ -6,7 +6,10 @@
       "name": "Farm",
       "image": "./Farm.jpg",
       "about": "Great condition!",
-      "likedBy": []
+      "likedBy": [
+        "Fred",
+        "Ben"
+      ]
     },
     {
       "id": 2,
@@ -14,7 +17,9 @@
       "name": "Infant piano",
       "image": "./Infant piano.jpg",
       "about": "Makes discordant music",
-      "likedBy": []
+      "likedBy": [
+        "Rey"
+      ]
     },
     {
       "owner": "Tim",
@@ -28,7 +33,7 @@
       "owner": "Peter",
       "name": "Key house",
       "image": "./Key house.jpg",
-      "about": "Four doors with for different keys to unlock them",
+      "about": "Four doors with for different keys to unlock them and four wooden dolls that fit inside.",
       "likedBy": [],
       "id": 4
     },
@@ -112,13 +117,16 @@
       "owner": "Tim",
       "date": "August 1st, 10:00am",
       "location": "South Houston",
-      "likedBy": []
+      "likedBy": [
+        "Fred",
+        "Ben"
+      ]
     },
     {
       "id": 2,
       "name": "Other Toy Swap",
       "owner": "Peter",
-      "date": "August 26st, 9:00am",
+      "date": "August 26th, 9:00am",
       "location": "Austin",
       "likedBy": []
     },
@@ -126,7 +134,7 @@
       "id": 3,
       "name": "Even More Toys",
       "owner": "Tim",
-      "date": "Dec 16st, 3:00pm",
+      "date": "Dec 16th, 3:00pm",
       "location": "North Houston",
       "likedBy": []
     },
@@ -136,7 +144,9 @@
       "owner": "Ben",
       "date": "Nov 1st, 9:00pm",
       "location": "TBD",
-      "likedBy": []
+      "likedBy": [
+        "Rey"
+      ]
     },
     {
       "name": "This",
@@ -145,6 +155,16 @@
       "location": "That",
       "likedBy": [],
       "id": 5
+    },
+    {
+      "name": "Star Wars Toy Swap",
+      "owner": "Rey",
+      "date": "Tomorrow",
+      "location": "Tatooine",
+      "likedBy": [
+        "Rey"
+      ],
+      "id": 6
     }
   ],
   "users": [
@@ -171,6 +191,12 @@
       "password": "123",
       "isSignedIn": false,
       "id": 4
+    },
+    {
+      "name": "Rey",
+      "password": "123",
+      "isSignedIn": false,
+      "id": 5
     }
   ]
 }

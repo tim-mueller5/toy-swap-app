@@ -62,13 +62,15 @@ function ToyCard({ toy, onUserPage, handleToyDeleteClick, currentUser, allToys, 
         }
     }
 
+    const likesToDisplay = toy.likedBy.map(like => (like + ", "))
+
     return (
         <div className="toycard">
             <p>{toy.name}</p>
             <img src={toy.image} alt={toy.name} style={{ height: 200 }}/>
             <p>Listed by: {toy.owner}</p>
-            <p>About: {toy.about}</p>
-            <div>{toy.likedBy}</div>
+            <p className="about">About: {toy.about}</p>
+            <div>Liked by: {likesToDisplay}</div>
             <p>Likes: {toy.likedBy.length}</p>
             {currentUser.name !== "" && !onUserPage ? <button onClick={handleLike}>{toy.likedBy.includes(currentUser.name) ? "Unlike" : "Like" }</button> : null}
             {onUserPage ? <button onClick={() => handleToyDeleteClick(toy)}>Delete</button> : null}

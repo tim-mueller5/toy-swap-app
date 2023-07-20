@@ -62,6 +62,7 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
         }
     }
 
+    const likesToDisplay = event.likedBy.map(like => (like + ", "))
 
     return (
         <div className="eventcard">
@@ -69,7 +70,7 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
             <p>Location: {event.location}</p>
             <p>Date: {event.date}</p>
             <p>Owner: {currentUser.name === event.owner ? "You" : event.owner}</p>
-            <p>People plan on attending: {event.likedBy}</p>
+            <p>People plan on attending: {likesToDisplay}</p>
             {currentUser.name !== "" ? <button onClick={handleEventLike}>{event.likedBy.includes(currentUser.name) ? "Unlike / Not planning on attending" : "Like / Plan on attending" }</button> : null}
             {currentUser.name === event.owner ? <button onClick={() => handleEventDeleteClick(event)}>Delete</button>: null}
         </div>
