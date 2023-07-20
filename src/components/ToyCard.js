@@ -63,9 +63,10 @@ function ToyCard({ toy, onUserPage, handleToyDeleteClick, currentUser, allToys, 
     }
 
     return (
-        <div style={{border: "solid"}}>
+        <div className="toycard">
             <p>{toy.name}</p>
             <img src={toy.image} alt={toy.name} style={{ height: 200 }}/>
+            <p>Listed by: {toy.owner}</p>
             <p>About: {toy.about}</p>
             <div>{toy.likedBy}</div>
             <p>Likes: {toy.likedBy.length}</p>

@@ -48,7 +48,7 @@ function ChangeCurrentUser({ currentUser, setCurrentUser, allUsers, setAllUsers 
         })
         .then(resp => resp.json())
         .then(newUser => {
-            setCurrentUser({newUser})
+            setCurrentUser(newUser)
             setAllUsers([...allUsers, newUser])
             setNewUserformData({
                 name: "",
@@ -59,7 +59,7 @@ function ChangeCurrentUser({ currentUser, setCurrentUser, allUsers, setAllUsers 
     }
 
     return (
-        <div>
+        <div className="changecurrentuser">
             <div>
                 <form onSubmit={onLoginSubmit}>
                     {currentUser.name === "" ? <h3>Login: </h3> : <h3>Change User: </h3>}

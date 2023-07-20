@@ -64,7 +64,7 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
 
 
     return (
-        <div style={{border: "solid"}}>
+        <div className="eventcard">
             <p>Event Name: {event.name}</p>
             <p>Location: {event.location}</p>
             <p>Date: {event.about}</p>

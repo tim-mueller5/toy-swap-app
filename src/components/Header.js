@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function Header({ currentUser }) {
     return (
-      <div>
+      <div className="header">
         <header>
           <h1>Toy Swap App</h1>
           <Link to="/">To All Listings  </Link>

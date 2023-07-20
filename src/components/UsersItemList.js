@@ -8,9 +8,10 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
         owner: currentUser.name,
         name: "",
         image: "",
-        about: ""
+        about: "",
+        likedBy: []
     })
-    
+     
     const handleToyDeleteClick = (toy) => {
         fetch(`http://localhost:3000/toys/${toy.id}`, {
             method: "DELETE",
@@ -32,15 +33,19 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
 
     const handleNewToySubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:3000/toys",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        })
-        .then(resp => resp.json())
-        .then(newItem => setAllToys([...allToys, newItem]))
+        if(formData.name === "" || formData.image === "" || formData.about === ""){
+            alert("Please fill out all sections")
+        } else{
+            fetch("http://localhost:3000/toys",{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(resp => resp.json())
+            .then(newItem => setAllToys([...allToys, newItem]))
+        }
     }
 
     const handleChange = (e) => {
@@ -48,7 +53,7 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
     }
 
     return (
-        <div>
+        <div className="useritemlist">
             {currentUser.name === "" 
             ? <h3>Login to see your listings</h3> 
             :   <div>
@@ -61,7 +66,7 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
                         <label htmlFor="about"> Toy details: </label>
                         <input type="text" id="about" value={formData.about} onChange={handleChange}/>
                         <button type="submit">Submit</button>
-                    </form>
+                    </form>  
                     <h2>Your Toys currently Listed:</h2>
                     {currentUsersToysToDisplay}
                 </div>

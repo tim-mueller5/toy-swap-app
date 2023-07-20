@@ -23,6 +23,22 @@
       "about": "All rings included",
       "likedBy": [],
       "id": 3
+    },
+    {
+      "owner": "Peter",
+      "name": "Key house",
+      "image": "./Key house.jpg",
+      "about": "Four doors with for different keys to unlock them",
+      "likedBy": [],
+      "id": 4
+    },
+    {
+      "owner": "Ben",
+      "name": "Grocery basket with play food",
+      "image": "./Grocery basket side pic.jpg",
+      "about": "Detachable basket",
+      "likedBy": [],
+      "id": 5
     }
   ],
   "events": [
@@ -41,6 +57,22 @@
       "about": "August 26st, 9:00am",
       "location": "Austin",
       "likedBy": []
+    },
+    {
+      "id": 3,
+      "name": "Even More Toys",
+      "owner": "Tim",
+      "about": "Dec 16st, 3:00pm",
+      "location": "North Houston",
+      "likedBy": []
+    },
+    {
+      "id": 4,
+      "name": "First Time Toy Swap",
+      "owner": "Ben",
+      "about": "Nov 1st, 9:00pm",
+      "location": "TBD",
+      "likedBy": []
     }
   ],
   "users": [
@@ -55,6 +87,12 @@
       "password": "123",
       "isSignedIn": false,
       "id": 2
+    },
+    {
+      "name": "Ben",
+      "password": "123",
+      "isSignedIn": false,
+      "id": 3
     }
   ]
 }
