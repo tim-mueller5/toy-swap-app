@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import AllEvents from './AllEvents';
-import AllItemsList from './AllItemsList';
+import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import Header from './Header';
+import Home from "./Home"
+import AllEvents from './AllEvents';
+import AllItemsList from './AllItemsList';
 import UsersItemList from './UsersItemList';
-import { Switch, Route, Link } from "react-router-dom";
 
 function App() {
 
@@ -35,14 +36,17 @@ function App() {
     <div className="App">
       <Header currentUser={currentUser} />
       <Switch>
-        <Route path="/user">
-          <UsersItemList currentUser={currentUser} setCurrentUser={setCurrentUser} allToys={allToys} setAllToys={setAllToys} allUsers={allUsers} setAllUsers={setAllUsers} />
-        </Route>
         <Route exact path="/">
+          <Home/>
+        </Route>
+        <Route path="/all-listings">
           <AllItemsList allToys={allToys} setAllToys={setAllToys} currentUser={currentUser} />
         </Route>
         <Route path="/events">
           <AllEvents allEvents={allEvents} setAllEvents={setAllEvents} currentUser={currentUser} />
+        </Route>
+        <Route path="/user">
+          <UsersItemList currentUser={currentUser} setCurrentUser={setCurrentUser} allToys={allToys} setAllToys={setAllToys} allUsers={allUsers} setAllUsers={setAllUsers} />
         </Route>
         <Route path="*">
           <div>

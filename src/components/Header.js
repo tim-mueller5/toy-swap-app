@@ -5,7 +5,9 @@ function Header({ currentUser }) {
     <div className="header">
       <header>
         <h1>Toy Swap App</h1>
-        <Link to="/">To All Listings</Link>
+        <Link to="/">Home</Link>
+        <label> | </label>
+        <Link to="/all-listings">To All Listings</Link>
         <label> | </label>
         <Link to="/events">To All Events</Link>
         <label> | </label>
