@@ -25,7 +25,8 @@ function ChangeCurrentUser({ currentUser, setCurrentUser, allUsers, setAllUsers 
         e.preventDefault();
         const loginAttempt = allUsers.filter((user) => {
             if(user.name === loginFormData.name && user.password === loginFormData.password){
-                setCurrentUser({...user, isSignedIn: true})
+                console.log(user)
+                setCurrentUser(user)
                 setLoginFormData({name: "", password: ""})
                 return (user.name)
             } else {
@@ -59,7 +60,7 @@ function ChangeCurrentUser({ currentUser, setCurrentUser, allUsers, setAllUsers 
     }
 
     return (
-        <div className="changecurrentuser">
+        <div className="form">
             <div>
                 <form onSubmit={onLoginSubmit}>
                     {currentUser.name === "" ? <h3>Login: </h3> : <h3>Change User: </h3>}

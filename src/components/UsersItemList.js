@@ -5,13 +5,13 @@ import ChangeCurrentUser from "./ChangeCurrentUser"
 function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUsers, setAllUsers }) {
     
     const [formData, setFormData] = useState({
-        owner: currentUser.name,
+        owner: "",
         name: "",
         image: "",
         about: "",
         likedBy: []
     })
-     
+
     const handleToyDeleteClick = (toy) => {
         fetch(`http://localhost:3000/toys/${toy.id}`, {
             method: "DELETE",
@@ -33,6 +33,7 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
 
     const handleNewToySubmit = (e) => {
         e.preventDefault();
+        setFormData({...formData, owner: currentUser.name})
         if(formData.name === "" || formData.image === "" || formData.about === ""){
             alert("Please fill out all sections")
         } else{
@@ -44,7 +45,10 @@ function UsersItemList({ currentUser, setCurrentUser, allToys, setAllToys, allUs
                 body: JSON.stringify(formData),
             })
             .then(resp => resp.json())
-            .then(newItem => setAllToys([...allToys, newItem]))
+            .then(newItem => {
+                console.log(newItem)
+                setAllToys([...allToys, newItem])
+            })
         }
     }
 

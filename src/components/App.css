@@ -6,9 +6,23 @@
   background-color: #6f94dd;
   border: solid;
   margin: 40px;
-  height: 400px;
+  /* height: 425px; */
+  width: 400px;
+  float: left;
+}
+
+.eventcard{
+  border: solid;
+  margin: 40px;
+  /* height: 250px; */
   width: 500px;
   float: left;
+}
+
+.form{
+  clear: left;
+  position: relative;
+  bottom:20px;
 }
 
 /* body {

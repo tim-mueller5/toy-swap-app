@@ -19,7 +19,7 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
                                 id: event.id,
                                 name: event.name,
                                 owner: event.owner,
-                                about: event.about,
+                                date: event.date,
                                 location: event.location,
                                 likedBy: [...event.likedBy, currentUser.name]
                             }
@@ -48,7 +48,7 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
                                 id: event.id,
                                 name: event.name,
                                 owner: event.owner,
-                                about: event.about,
+                                date: event.date,
                                 location: event.location,
                                 likedBy: filteredLikedBy
                             }
@@ -65,9 +65,9 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
 
     return (
         <div className="eventcard">
-            <p>Event Name: {event.name}</p>
+            <h4>Event Name: {event.name}</h4>
             <p>Location: {event.location}</p>
-            <p>Date: {event.about}</p>
+            <p>Date: {event.date}</p>
             <p>Owner: {currentUser.name === event.owner ? "You" : event.owner}</p>
             <p>People plan on attending: {event.likedBy}</p>
             {currentUser.name !== "" ? <button onClick={handleEventLike}>{event.likedBy.includes(currentUser.name) ? "Unlike / Not planning on attending" : "Like / Plan on attending" }</button> : null}
@@ -75,5 +75,5 @@ function EventCard({ event, handleEventDeleteClick, currentUser, allEvents, setA
         </div>
     )
 }
- 
+
 export default EventCard
