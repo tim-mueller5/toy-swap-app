@@ -25,6 +25,14 @@
   bottom:20px;
 }
 
+.header{
+  margin-bottom: 50px;
+}
+
+h1{
+  font-size: 50px;
+}
+
 /* body {
   background-color: #6f94dd;
   color: black;
