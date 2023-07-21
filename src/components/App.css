@@ -38,6 +38,11 @@ h1{
   font-size: 50px;
 }
 
+.home{
+  margin: auto;
+  width: 650px;
+}
+
 /* body {
   background-color: #6f94dd;
   color: black;
