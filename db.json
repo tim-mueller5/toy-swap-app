@@ -48,7 +48,7 @@
     {
       "owner": "Tim",
       "name": "New Toy",
-      "image": "./Grocery basket side pic.jpg",
+      "image": "./gorilla.jpg",
       "about": "Great!",
       "likedBy": [],
       "id": 6
@@ -56,7 +56,7 @@
     {
       "owner": "Tim",
       "name": "More New Toys",
-      "image": "./Grocery basket side pic.jpg",
+      "image": "./pirateship.jpg",
       "about": "Amazing!",
       "likedBy": [],
       "id": 7
@@ -64,7 +64,7 @@
     {
       "owner": "Peter",
       "name": "Here's a toy",
-      "image": "./Grocery basket side pic.jpg",
+      "image": "./puzzle.jpg",
       "about": "Available",
       "likedBy": [],
       "id": 8
@@ -72,7 +72,7 @@
     {
       "owner": "Peter",
       "name": "More Stuff",
-      "image": "./Grocery basket side pic.jpg",
+      "image": "./steamtrain.jpg",
       "about": "Fair",
       "likedBy": [],
       "id": 9
@@ -80,7 +80,7 @@
     {
       "owner": "Ben",
       "name": "Some stuff",
-      "image": "./Grocery basket side pic.jpg",
+      "image": "./Girl-cap-gun.jpg",
       "about": "junk",
       "likedBy": [],
       "id": 10
@@ -88,7 +88,7 @@
     {
       "owner": "Tim",
       "name": "Thing 1",
-      "image": "./Grocery basket side pic.jpg",
+      "image": "./foodbasket.jpg",
       "about": "Yes!",
       "likedBy": [],
       "id": 11
@@ -96,7 +96,7 @@
     {
       "owner": "Ben",
       "name": "More Stuff",
-      "image": "./Grocery basket side pic.jpg",
+      "image": "./Logitech-game-controller.jpg",
       "about": "Nothing",
       "likedBy": [],
       "id": 12
@@ -104,10 +104,18 @@
     {
       "owner": "Ben",
       "name": "Junk",
-      "image": "./Grocery basket side pic.jpg",
+      "image": "./baby-stacking-toy.jpg",
       "about": "An old thing",
       "likedBy": [],
       "id": 13
+    },
+    {
+      "owner": "Ben",
+      "name": "Cars",
+      "image": "./cars.jpg",
+      "about": "Has all their wheels!",
+      "likedBy": [],
+      "id": 14
     }
   ],
   "events": [

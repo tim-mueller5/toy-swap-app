@@ -3,9 +3,9 @@
 
 function Home() {
     return (
-        <div>
+        <div className="home">
             <h2>Welcome to the Toy Swapping App</h2>
-            <p>Find toys you(you're kid's) like and meet up with other people at events to swap toys.  Save some money and reduse waste!</p>
+            <p>Find toys you (ie. you're kid's) like and meet up with other people at events to swap toys.  Save some money and reduse waste!</p>
             <ul>Things to add:
                 <li>Tabs/filters for different types of things(clothes, toys, baby products).</li>
                 <li>A way to link toys to events.</li>
