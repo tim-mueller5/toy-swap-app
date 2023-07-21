@@ -47,7 +47,7 @@ function AllEvents({ allEvents, setAllEvents, currentUser }) {
 
     return (
     <div className="allevents">
-        <h3>All Events will show here</h3>
+        <h3>All Events:</h3>
         {eventsToDisplay}
         {currentUser.name === "" 
         ? <h3 className="form">Login to add new events</h3>

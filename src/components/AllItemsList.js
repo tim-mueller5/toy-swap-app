@@ -7,7 +7,7 @@ function AllItemsList({ allToys, currentUser, setAllToys }) {
 
     return (
         <div className="allitemslist">
-            <h3>All items up for the taking will render here</h3>
+            <h3>All Items Available for Swap:</h3>
             {toysToDisplay}
         </div>
     )

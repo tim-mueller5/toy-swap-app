@@ -26,14 +26,16 @@
       "name": "Stacking Rings",
       "image": "./Stacking rings.jpg",
       "about": "All rings included",
-      "likedBy": [],
+      "likedBy": [
+        "Rey"
+      ],
       "id": 3
     },
     {
       "owner": "Peter",
       "name": "Key house",
       "image": "./Key house.jpg",
-      "about": "Four doors with for different keys to unlock them and four wooden dolls that fit inside.",
+      "about": "Four doors with four different keys to unlock them and four wooden dolls that fit inside.  Each unique key only opens one door.  Keys are small, so not for very young childern that still put things in their mouth.",
       "likedBy": [],
       "id": 4
     },
@@ -74,7 +76,9 @@
       "name": "More Stuff",
       "image": "./steamtrain.jpg",
       "about": "Fair",
-      "likedBy": [],
+      "likedBy": [
+        "Tim"
+      ],
       "id": 9
     },
     {
@@ -175,6 +179,16 @@
         "Rey"
       ],
       "id": 6
+    },
+    {
+      "name": "Harlingen East Swap",
+      "owner": "Tim",
+      "date": "10:00 am April 3rd, 2024 ",
+      "location": "Harlingen High School Gym",
+      "likedBy": [
+        "Tim"
+      ],
+      "id": 7
     }
   ],
   "users": [
