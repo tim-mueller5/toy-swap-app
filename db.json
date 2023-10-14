@@ -1,17 +1,6 @@
 {
   "toys": [
     {
-      "id": 1,
-      "owner": "Tim",
-      "name": "Farm",
-      "image": "./Farm.jpg",
-      "about": "Great condition!",
-      "likedBy": [
-        "Ben",
-        "Tim"
-      ]
-    },
-    {
       "id": 2,
       "owner": "Peter",
       "name": "Infant piano",
@@ -27,7 +16,8 @@
       "image": "./Stacking rings.jpg",
       "about": "All rings included",
       "likedBy": [
-        "Rey"
+        "Rey",
+        "Tim"
       ],
       "id": 3
     },
@@ -36,7 +26,9 @@
       "name": "Key house",
       "image": "./Key house.jpg",
       "about": "Four doors with four different keys to unlock them and four wooden dolls that fit inside.  Each unique key only opens one door.  Keys are small, so not for very young childern that still put things in their mouth.",
-      "likedBy": [],
+      "likedBy": [
+        "Tim"
+      ],
       "id": 4
     },
     {
@@ -120,6 +112,22 @@
       "about": "Has all their wheels!",
       "likedBy": [],
       "id": 14
+    },
+    {
+      "owner": "Tim",
+      "name": "Farm",
+      "image": "./Farm.jpg",
+      "about": "Hi",
+      "likedBy": [],
+      "id": 15
+    },
+    {
+      "owner": "Fred",
+      "name": "Thing",
+      "image": "./Grocery basket side pic.jpg",
+      "about": "Thing",
+      "likedBy": [],
+      "id": 16
     }
   ],
   "events": [
@@ -131,7 +139,8 @@
       "location": "South Houston",
       "likedBy": [
         "Fred",
-        "Ben"
+        "Ben",
+        "Tim"
       ]
     },
     {
@@ -140,16 +149,6 @@
       "owner": "Peter",
       "date": "August 26th, 9:00am",
       "location": "Austin",
-      "likedBy": [
-        "Tim"
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Even More Toys",
-      "owner": "Tim",
-      "date": "Dec 16th, 3:00pm",
-      "location": "North Houston",
       "likedBy": []
     },
     {
