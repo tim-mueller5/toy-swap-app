@@ -78,7 +78,9 @@
       "name": "Some stuff",
       "image": "./Girl-cap-gun.jpg",
       "about": "junk",
-      "likedBy": [],
+      "likedBy": [
+        "Rebecca"
+      ],
       "id": 10
     },
     {
@@ -175,7 +177,9 @@
       "date": "Tomorrow",
       "location": "Tatooine",
       "likedBy": [
-        "Rey"
+        "Rey",
+        "Tim",
+        "Rebecca"
       ],
       "id": 6
     },
@@ -220,6 +224,12 @@
       "password": "123",
       "isSignedIn": false,
       "id": 5
+    },
+    {
+      "name": "Rebecca",
+      "password": "123",
+      "isSignedIn": false,
+      "id": 6
     }
   ]
 }
