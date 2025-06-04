@@ -8,29 +8,42 @@ import AllItemsList from './AllItemsList';
 import UsersItemList from './UsersItemList';
 
 function App() {
+    const [allToys, setAllToys] = useState([])
+    const [allEvents, setAllEvents] = useState([])
+    const [allUsers, setAllUsers] = useState([])
+    const [currentUser, setCurrentUser] = useState({
+        name: "",
+        password: "",
+        isSignedIn: false
+    })
   
-  const [allToys, setAllToys] = useState([])
-  const [allEvents, setAllEvents] = useState([])
-  const [allUsers, setAllUsers] = useState([])
-  const [currentUser, setCurrentUser] = useState({
-    name: "",
-    password: "",
-    isSignedIn: false
-  })
+    useEffect(() => {
+        getData();
+    }, [])
 
-  useEffect(() => {
-    fetch("http://localhost:3000/toys")
-    .then(resp => resp.json())
-    .then(data => setAllToys(data))
-
-    fetch("http://localhost:3000/events")
-    .then(resp => resp.json())
-    .then(data => setAllEvents(data))
-
-    fetch("http://localhost:3000/users")
-    .then(resp => resp.json())
-    .then(data => setAllUsers(data))
-  }, [])
+    const getData = async () => {
+        try {
+            const resp = await fetch("http://localhost:3000/toys");
+            const json = await resp.json();
+            setAllToys(json);
+        } catch {
+            console.log("Failed to fetch toys.")
+        }
+        try {
+            const resp = await fetch("http://localhost:3000/events")
+            const json = await resp.json();
+            setAllEvents(json);
+        } catch {
+            console.log("Failed to fetch events.")
+        }
+        try {
+            const resp = await fetch("http://localhost:3000/users");
+            const json = await resp.json();
+            setAllUsers(json);
+        } catch {
+            console.log("Failed to fetch users.")
+        }
+    }
 
   return (
     <div className="App">

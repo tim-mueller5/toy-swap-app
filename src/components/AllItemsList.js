@@ -8,7 +8,11 @@ function AllItemsList({ allToys, currentUser, setAllToys }) {
     return (
         <div className="allitemslist">
             <h3>All Items Available for Swap:</h3>
-            {toysToDisplay}
+            {toysToDisplay.length > 1 ?
+                toysToDisplay
+            :
+                <p>No toy listings available</p>
+            }
         </div>
     )
 }

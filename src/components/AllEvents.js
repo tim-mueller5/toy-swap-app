@@ -48,7 +48,11 @@ function AllEvents({ allEvents, setAllEvents, currentUser }) {
     return (
     <div className="allevents">
         <h3>All Events:</h3>
-        {eventsToDisplay}
+        {eventsToDisplay.length >= 1 ?
+            eventsToDisplay
+        :
+            <p>No events available</p>
+        }
         {currentUser.name === "" 
         ? <h3 className="form">Login to add new events</h3>
         : <div className="form">
